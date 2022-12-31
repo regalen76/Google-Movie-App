@@ -3,10 +3,19 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB6960B4295D74E3001AC49B /* AdminHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6960B3295D74E3001AC49B /* AdminHomeViewController.swift */; };
+		CB6960B6295D78C1001AC49B /* AdminMovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6960B5295D78C1001AC49B /* AdminMovieCell.swift */; };
+		CB6960BC295D791F001AC49B /* AdminMovieDetalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6960BB295D791F001AC49B /* AdminMovieDetalViewController.swift */; };
+		CB6960BE295D8C73001AC49B /* Moviedata.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6960BD295D8C73001AC49B /* Moviedata.swift */; };
+		CB6960C0295E1ED5001AC49B /* UserHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6960BF295E1ED5001AC49B /* UserHomeViewController.swift */; };
+		CB6960C2295EA11B001AC49B /* UserMovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6960C1295EA11B001AC49B /* UserMovieCell.swift */; };
+		CB6960C429606EEF001AC49B /* UserReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6960C329606EEF001AC49B /* UserReviewViewController.swift */; };
+		CB6960C6296070AC001AC49B /* Moviereview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6960C5296070AC001AC49B /* Moviereview.swift */; };
+		CB6960C829608749001AC49B /* UserReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6960C729608749001AC49B /* UserReviewCell.swift */; };
 		CBF9B3A8295CCD6000188191 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF9B3A7295CCD6000188191 /* AppDelegate.swift */; };
 		CBF9B3AA295CCD6000188191 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF9B3A9295CCD6000188191 /* SceneDelegate.swift */; };
 		CBF9B3AC295CCD6000188191 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF9B3AB295CCD6000188191 /* ViewController.swift */; };
@@ -14,9 +23,20 @@
 		CBF9B3B2295CCD6000188191 /* MulmedFinalLab.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CBF9B3B0295CCD6000188191 /* MulmedFinalLab.xcdatamodeld */; };
 		CBF9B3B4295CCD6100188191 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBF9B3B3295CCD6100188191 /* Assets.xcassets */; };
 		CBF9B3B7295CCD6100188191 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBF9B3B5295CCD6100188191 /* LaunchScreen.storyboard */; };
+		CBF9B3BF295CCEA700188191 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF9B3BE295CCEA700188191 /* RegisterViewController.swift */; };
+		CBF9B3C3295CD21800188191 /* Userdata.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF9B3C2295CD21800188191 /* Userdata.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CB6960B3295D74E3001AC49B /* AdminHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminHomeViewController.swift; sourceTree = "<group>"; };
+		CB6960B5295D78C1001AC49B /* AdminMovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminMovieCell.swift; sourceTree = "<group>"; };
+		CB6960BB295D791F001AC49B /* AdminMovieDetalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminMovieDetalViewController.swift; sourceTree = "<group>"; };
+		CB6960BD295D8C73001AC49B /* Moviedata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Moviedata.swift; sourceTree = "<group>"; };
+		CB6960BF295E1ED5001AC49B /* UserHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHomeViewController.swift; sourceTree = "<group>"; };
+		CB6960C1295EA11B001AC49B /* UserMovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMovieCell.swift; sourceTree = "<group>"; };
+		CB6960C329606EEF001AC49B /* UserReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserReviewViewController.swift; sourceTree = "<group>"; };
+		CB6960C5296070AC001AC49B /* Moviereview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Moviereview.swift; sourceTree = "<group>"; };
+		CB6960C729608749001AC49B /* UserReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserReviewCell.swift; sourceTree = "<group>"; };
 		CBF9B3A4295CCD6000188191 /* MulmedFinalLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MulmedFinalLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBF9B3A7295CCD6000188191 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBF9B3A9295CCD6000188191 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +46,8 @@
 		CBF9B3B3295CCD6100188191 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CBF9B3B6295CCD6100188191 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CBF9B3B8295CCD6100188191 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CBF9B3BE295CCEA700188191 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		CBF9B3C2295CD21800188191 /* Userdata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Userdata.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +88,17 @@
 				CBF9B3B5295CCD6100188191 /* LaunchScreen.storyboard */,
 				CBF9B3B8295CCD6100188191 /* Info.plist */,
 				CBF9B3B0295CCD6000188191 /* MulmedFinalLab.xcdatamodeld */,
+				CBF9B3BE295CCEA700188191 /* RegisterViewController.swift */,
+				CBF9B3C2295CD21800188191 /* Userdata.swift */,
+				CB6960B3295D74E3001AC49B /* AdminHomeViewController.swift */,
+				CB6960B5295D78C1001AC49B /* AdminMovieCell.swift */,
+				CB6960BB295D791F001AC49B /* AdminMovieDetalViewController.swift */,
+				CB6960BD295D8C73001AC49B /* Moviedata.swift */,
+				CB6960BF295E1ED5001AC49B /* UserHomeViewController.swift */,
+				CB6960C1295EA11B001AC49B /* UserMovieCell.swift */,
+				CB6960C329606EEF001AC49B /* UserReviewViewController.swift */,
+				CB6960C5296070AC001AC49B /* Moviereview.swift */,
+				CB6960C729608749001AC49B /* UserReviewCell.swift */,
 			);
 			path = MulmedFinalLab;
 			sourceTree = "<group>";
@@ -106,7 +139,7 @@
 				};
 			};
 			buildConfigurationList = CBF9B39F295CCD6000188191 /* Build configuration list for PBXProject "MulmedFinalLab" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -141,10 +174,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB6960B6295D78C1001AC49B /* AdminMovieCell.swift in Sources */,
+				CB6960C6296070AC001AC49B /* Moviereview.swift in Sources */,
+				CB6960C2295EA11B001AC49B /* UserMovieCell.swift in Sources */,
+				CB6960C829608749001AC49B /* UserReviewCell.swift in Sources */,
 				CBF9B3B2295CCD6000188191 /* MulmedFinalLab.xcdatamodeld in Sources */,
+				CBF9B3BF295CCEA700188191 /* RegisterViewController.swift in Sources */,
+				CBF9B3C3295CD21800188191 /* Userdata.swift in Sources */,
+				CB6960BE295D8C73001AC49B /* Moviedata.swift in Sources */,
 				CBF9B3AC295CCD6000188191 /* ViewController.swift in Sources */,
+				CB6960BC295D791F001AC49B /* AdminMovieDetalViewController.swift in Sources */,
+				CB6960B4295D74E3001AC49B /* AdminHomeViewController.swift in Sources */,
+				CB6960C429606EEF001AC49B /* UserReviewViewController.swift in Sources */,
 				CBF9B3A8295CCD6000188191 /* AppDelegate.swift in Sources */,
 				CBF9B3AA295CCD6000188191 /* SceneDelegate.swift in Sources */,
+				CB6960C0295E1ED5001AC49B /* UserHomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +342,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -325,6 +370,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
