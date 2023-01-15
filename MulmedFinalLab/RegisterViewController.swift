@@ -27,10 +27,10 @@ class RegisterViewController: UIViewController {
             var flag = false
             var message = ""
             
-            if usernameTextField.text!.count <= 6 {
+            if usernameTextField.text!.count < 6 {
                 message = "Username must contains more than 6 characters"
                 flag = true
-            }else if passwordTextField.text!.count <= 8 {
+            }else if passwordTextField.text!.count < 8 {
                 message = "Password must contains more than 8 characters"
                 flag = true
             }else if

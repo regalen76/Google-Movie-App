@@ -14,4 +14,6 @@ class AdminMovieCell: UITableViewCell{
     @IBOutlet weak var movieLength: UILabel!
     @IBOutlet weak var movieReleaseDate: UILabel!
     @IBOutlet weak var movieRating: UILabel!
+    
+    @IBOutlet weak var cellView: UIView!
 }

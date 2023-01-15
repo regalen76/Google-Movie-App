@@ -10,6 +10,8 @@ import CoreData
 
 class UserHomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     
+    var movie : [Moviedata] = []
+    
     @IBOutlet weak var movieTableView: UITableView!
     
     @IBOutlet weak var filterText: UITextField!
@@ -205,6 +207,11 @@ class UserHomeViewController: UIViewController, UITableViewDataSource, UITableVi
         let tableViewCell = tableView.dequeueReusableCell(withIdentifier: "tableViewCellID", for: indexPath) as! UserMovieCell
         
         let thisMovie: Moviedata!
+        
+        tableViewCell.layer.borderWidth = 2.0
+        tableViewCell.layer.borderColor = UIColor.white.cgColor
+        tableViewCell.layer.cornerRadius = 15
+        
         thisMovie = nonDeletedMovies()[indexPath.row]
         
         tableViewCell.movieTitle.text = thisMovie.title

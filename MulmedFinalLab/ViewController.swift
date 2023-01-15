@@ -10,6 +10,7 @@ import CoreData
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var logoImage: UIImageView!
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
@@ -23,11 +24,20 @@ class ViewController: UIViewController {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Userdata")
         do{
             let results:NSArray = try context.fetch(request) as NSArray
-            for result in results {
-                let userdata = result as! Userdata
-                print("username: \(userdata.username)")
-                print("password: \(userdata.password)")
-                print("isAdmin: \(userdata.isadmin)")
+            let res = results
+            if res.count == 0{  //jika baru download app dan tidak ada user maka create admin
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
+                let entity = NSEntityDescription.entity(forEntityName: "Userdata", in: context)
+                let newUserdata = Userdata(entity: entity!, insertInto: context)
+                newUserdata.username = "thisisadmin"
+                newUserdata.password = "adminpassword"
+                newUserdata.isadmin = 1
+                do{
+                    try context.save()
+                }catch{
+                    print("context save error")
+                }
             }
         }catch{
             print("Fetch failed")
@@ -38,7 +48,7 @@ class ViewController: UIViewController {
         performSegue(withIdentifier: "registerSegue", sender: self)
     }
     
-    @IBAction func moveToHome(_ sender: Any) {
+    @IBAction func moveToHome(_ sender: Any) {  //login
         var flag = false
         var flag2 = false
         

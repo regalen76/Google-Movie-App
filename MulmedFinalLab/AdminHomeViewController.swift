@@ -13,7 +13,6 @@ var movieList = [Moviedata]()
 class AdminHomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var movieTableView: UITableView!
-    
     var firstLoad = true
     
     func nonDeletedMovies() -> [Moviedata]{
@@ -28,7 +27,7 @@ class AdminHomeViewController: UIViewController, UITableViewDataSource, UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        initList()
+        
         if(firstLoad){
             firstLoad = false
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -89,6 +88,10 @@ class AdminHomeViewController: UIViewController, UITableViewDataSource, UITableV
         
         let thisMovie: Moviedata!
         thisMovie = nonDeletedMovies()[indexPath.row]
+        
+        tableViewCell.layer.borderWidth = 2.0
+        tableViewCell.layer.borderColor = UIColor.white.cgColor
+        tableViewCell.layer.cornerRadius = 15
         
         tableViewCell.movieTitle.text = thisMovie.title
         tableViewCell.movieDesc.text = "Description: " + thisMovie.desc

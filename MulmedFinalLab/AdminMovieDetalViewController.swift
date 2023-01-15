@@ -47,44 +47,68 @@ class AdminMovieDetalViewController: UIViewController, UIPickerViewDelegate, UIP
     }
     
     @IBAction func saveBtn(_ sender: Any) {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
-        if selectedMovie == nil{
-            let entity = NSEntityDescription.entity(forEntityName: "Moviedata", in: context)
-            let newMovie = Moviedata(entity: entity!, insertInto: context)
-            newMovie.id = movieList.count as NSNumber
-            newMovie.title = titleText.text
-            newMovie.desc = descriptionText.text
-            newMovie.genre = genre.text
-            newMovie.length = length.text
-            newMovie.releasedate = releasedate.text
-            newMovie.rating = 0
-            do{
-                try context.save()
-                movieList.append(newMovie)
-                performSegue(withIdentifier: "unwindToAdminHome", sender: self)
-            }catch{
-                print("context save error")
-            }
+        if titleText.text!.isEmpty || descriptionText.text!.isEmpty || genre.text!.isEmpty || length.text!.isEmpty || releasedate.text!.isEmpty{
+            let alertVC = UIAlertController(title: "Warning", message: "Fields cannot be empty", preferredStyle: .alert)
+            let action = UIAlertAction (title: "OK", style: .default)
+            alertVC.addAction(action)
+            present(alertVC, animated: true)
         }else{
-            let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Moviedata")
-            do{
-                let results:NSArray = try context.fetch(request) as NSArray
-                for result in results {
-                    let movie = result as! Moviedata
-                    if movie == selectedMovie{
-                        movie.title = titleText.text
-                        movie.desc = descriptionText.text
-                        movie.genre = genre.text
-                        movie.length = length.text
-                        movie.releasedate = releasedate.text
-                        movie.rating = 0
+            var flag = false
+            var message = ""
+            
+            if descriptionText.text!.count < 20 {
+                message = "Username must contains more than 20 characters"
+                flag = true
+            }else if length.text!.hasSuffix("Minutes") == false{
+                message = "Length must end with Minutes"
+                flag = true
+            }
+            let alertVC = UIAlertController (title: "Warning",message: message, preferredStyle: .alert)
+            let action = UIAlertAction (title: "OK", style: .default)
+            alertVC.addAction(action)
+            if flag {
+                present(alertVC, animated: true)
+            }else {
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
+                if selectedMovie == nil{
+                    let entity = NSEntityDescription.entity(forEntityName: "Moviedata", in: context)
+                    let newMovie = Moviedata(entity: entity!, insertInto: context)
+                    newMovie.id = movieList.count as NSNumber
+                    newMovie.title = titleText.text
+                    newMovie.desc = descriptionText.text
+                    newMovie.genre = genre.text
+                    newMovie.length = length.text
+                    newMovie.releasedate = releasedate.text
+                    newMovie.rating = 0
+                    do{
                         try context.save()
+                        movieList.append(newMovie)
                         performSegue(withIdentifier: "unwindToAdminHome", sender: self)
+                    }catch{
+                        print("context save error")
+                    }
+                }else{
+                    let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Moviedata")
+                    do{
+                        let results:NSArray = try context.fetch(request) as NSArray
+                        for result in results {
+                            let movie = result as! Moviedata
+                            if movie == selectedMovie{
+                                movie.title = titleText.text
+                                movie.desc = descriptionText.text
+                                movie.genre = genre.text
+                                movie.length = length.text
+                                movie.releasedate = releasedate.text
+                                movie.rating = 0
+                                try context.save()
+                                performSegue(withIdentifier: "unwindToAdminHome", sender: self)
+                            }
+                        }
+                    }catch{
+                        print("Fetch Failed")
                     }
                 }
-            }catch{
-                print("Fetch Failed")
             }
         }
     }
